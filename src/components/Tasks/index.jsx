@@ -1,4 +1,4 @@
-import styles from './tasks.modules.css';
+import styles from './tasks.module.css?block';
 
 export function Tasks() {
   return (
@@ -6,15 +6,18 @@ export function Tasks() {
       <header className={styles.header}>
         <div>
           <p>Create Tasks</p>
-          <span>18</span>
+          <span>10</span>
         </div>
 
         <div>
-          <p>Completed Tasks</p>
+          <p className={styles.textPurple}>Completed Tasks</p>
           <span>1 of 10</span>
         </div>
       </header>
+
+      <div className={styles.list} >
+      </div>
     </section>
   )
 }
-export default Tasks
+

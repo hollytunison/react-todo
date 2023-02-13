@@ -11,7 +11,7 @@ export function Header() {
         <input placeholder='add a new task' type="text" />
         <button>
           Create
-          <AiOutlinePlusCircle />
+          <AiOutlinePlusCircle size={20}/>
         </button>
       </form>
     </header>
