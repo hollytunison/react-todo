@@ -1,4 +1,4 @@
-import styles from './tasks.module.css?block';
+import styles from './tasks.module.css';
 
 export function Tasks() {
   return (
@@ -16,6 +16,7 @@ export function Tasks() {
       </header>
 
       <div className={styles.list} >
+      <Tasks />
       </div>
     </section>
   )
