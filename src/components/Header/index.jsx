@@ -3,13 +3,15 @@ import todologo from '../../assets/todologo.svg';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { useState } from 'react'
 
-export function Header( onAddTask ) {
+export function Header({ onAddTask }) {
   const [title, setTitle] = useState('');
 
   //function handling handleSubmit 
   function handleSubmit(event) {
     event.preventDefault();
+    
     onAddTask(title);
+    setTitle('');
   }
 
   //every text that's typed will be saved in this state

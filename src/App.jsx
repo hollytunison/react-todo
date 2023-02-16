@@ -1,12 +1,10 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Header } from "./components/Header"
-import { Tasks } from "./components/Tasks/index.jsx"
+import { Tasks } from "./components/Tasks"
 
 function App() {
-  //tasks array
   const [tasks, setTasks] = useState([]);
 
-  //adding new tasks to array with older tasks saved
   function addTask(taskTitle) {
     setTasks([
       ...tasks,
@@ -18,10 +16,32 @@ function App() {
     ]);
   }
 
+  function deletedTaskById(taskId) {
+    const newTasks = tasks.filter(task => task.id !== taskId);
+    setTasks(newTasks);
+  }
+
+  function toggleTaskCompletedById(taskId) {
+    const newTasks = tasks.map(task => {
+      if(task.id === taskId) {
+        return {
+          ...task,
+          isCompleted: !task.isCompleted
+        }
+      }
+      return task;
+    });
+    setTasks(newTasks);
+  }
+
   return (
     <>
     <Header onAddTask={addTask} />
-    <Tasks />
+    <Tasks
+        tasks={tasks}
+        onDelete={deletedTaskById}
+        onComplete={toggleTaskCompletedById}
+      />
     </>
   )
 }
