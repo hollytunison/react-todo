@@ -15,7 +15,7 @@ export function Task({ task, onComplete, onDelete }) {
         {task.title}
       </p>
 
-      <button className={styles.deleteButton} onClick={() => onDelete=(task.id)}>
+      <button className={styles.deleteButton} onClick={() => onDelete(task.id)}>
         <TbTrash size={20} />
       </button>
     </div>
